@@ -24,11 +24,13 @@ public class UserService {
         if (optionalUser.isPresent()){
             var userDto = optionalUser.get();
             if (userDto.getPassword().equals(pw)){
+                // session에 정보 저장
                 httpSession.setAttribute("USER",userDto);
             }else {
                 throw new RuntimeException("Password Not Match");
             }
         }else {
+            // 없는 유저
             throw new RuntimeException("User Not Found");
         }
     }
