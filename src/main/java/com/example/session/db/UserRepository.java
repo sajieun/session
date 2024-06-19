@@ -18,7 +18,7 @@ public class UserRepository {
         // 만약에 같은 이름이 존재한다면 찾아서 첫번째로 발견된 이름을 보여달라
         return userDtoList
                 .stream()
-                .filter(it-> it.getName().equals(name))
+                .filter(it-> it.getUsername().equals(name))
                 .findFirst();
     }
 
